@@ -60,35 +60,35 @@ const PortfolioSection = () => {
   return (
     <section
       id="portfolio"
-      className="section-dark-alt text-white relative depth-3 overflow-hidden py-12 sm:py-16 lg:py-20"
+      className="min-h-screen section-dark-alt text-white relative depth-3 overflow-hidden section-transition"
     >
       <div className="cinematic-overlay"></div>
-      <div className="container mx-auto">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16 space-y-3 sm:space-y-4 lg:space-y-6">
+      <div className="container mx-auto section-padding">
+        <div className="text-center component-margin space-y-4 sm:space-y-6 lg:space-y-8">
           <h2 className="font-[font2] heading-responsive-xl uppercase mb-4 sm:mb-6 lg:mb-8 leading-tight text-layer-3 text-glow">
             Our Portfolio
           </h2>
-          <div className='floating-panel-dark max-width-content mx-4 sm:mx-6'>
+          <div className="floating-panel-dark max-width-content">
             <p className="font-[font1] text-responsive leading-relaxed text-layer-2">
               Découvrez notre collection de films de mariage cinématographiques
             </p>
           </div>
         </div>
 
-        <div className="portfolio-showcase space-y-8 sm:space-y-10 lg:space-y-12">
+        <div className="portfolio-showcase space-y-12 sm:space-y-16 lg:space-y-20">
           
           {/* Moving Video Track */}
-          <div className="relative w-full overflow-hidden rounded-xl sm:rounded-2xl bg-pattern-dots mx-4 sm:mx-6">
+          <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-pattern-dots">
             <div
               ref={trackRef}
-              className="flex gap-3 sm:gap-4 lg:gap-6 xl:gap-8 w-[200%] py-3 sm:py-4 lg:py-6"
+              className="flex gap-4 sm:gap-6 lg:gap-8 xl:gap-12 w-[200%] py-4 sm:py-6 lg:py-8"
             >
               {[...allVideos, ...allVideos].map((video, index) => (
                 <div 
                   key={index}
-                  className="video-card flex-shrink-0 w-48 sm:w-56 lg:w-64 xl:w-72 video-glass gpu-accelerated"
+                  className="video-card flex-shrink-0 w-56 sm:w-64 lg:w-72 xl:w-80 video-glass gpu-accelerated"
                 >
-                  <div className="relative aspect-video bg-black rounded-md sm:rounded-lg overflow-hidden">
+                  <div className="relative aspect-video bg-black rounded-lg sm:rounded-xl overflow-hidden">
                     <iframe
                       className="absolute top-0 left-0 w-full h-full"
                       src={`https://www.youtube.com/embed/${video.videoId}?autoplay=0&mute=1&controls=1&modestbranding=1&rel=0&showinfo=0`}
@@ -105,12 +105,12 @@ const PortfolioSection = () => {
           </div>
 
           {/* Portfolio Button */}
-          <div className="text-center px-4 sm:px-6">
+          <div className="text-center">
             <Link 
               to="/projects"
-              className="btn-pill btn-primary h-10 sm:h-12 lg:h-14 px-6 sm:px-8 lg:px-12 inline-flex items-center justify-center group"
+              className="btn-pill btn-primary h-12 sm:h-16 lg:h-20 px-8 sm:px-12 lg:px-16 inline-flex items-center justify-center group"
             >
-              <span className="font-[font2] text-sm sm:text-base lg:text-lg">
+              <span className="font-[font2] text-base sm:text-xl lg:text-2xl">
                 View Our Portfolio
               </span>
             </Link>
