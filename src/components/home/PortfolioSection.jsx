@@ -45,11 +45,14 @@ const PortfolioSection = () => {
   const allVideos = [...teasers, ...highlights]
 
   useEffect(() => {
-    // Infinite marquee scroll effect
+    // 🔹 Initial scaling so GSAP controls transform instead of Tailwind
+    gsap.set('.video-card', { scale: 0.6 })
+
+    // 🔹 Infinite marquee scroll effect
     gsap.to(trackRef.current, {
-      xPercent: -50, // move half its width
+      xPercent: -50,
       repeat: -1,
-      duration: 40, // adjust speed
+      duration: 40,
       ease: "linear"
     })
   }, [])
@@ -78,7 +81,7 @@ const PortfolioSection = () => {
           <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-pattern-dots">
             <div
               ref={trackRef}
-              className="flex gap-4 sm:gap-6 lg:gap-8 xl:gap-12 w-[200%] py-4 sm:py-6 lg:py-8" // doubled width for seamless loop
+              className="flex gap-4 sm:gap-6 lg:gap-8 xl:gap-12 w-[200%] py-4 sm:py-6 lg:py-8"
             >
               {[...allVideos, ...allVideos].map((video, index) => (
                 <div 
