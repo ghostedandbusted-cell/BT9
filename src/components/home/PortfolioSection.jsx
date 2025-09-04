@@ -46,7 +46,7 @@ const PortfolioSection = () => {
 
   useEffect(() => {
     // 🔹 Initial scaling so GSAP controls transform instead of Tailwind
-    gsap.set('.video-card', { scale: 0.55 })
+    gsap.set('.video-card', { scale: 0.4 })
 
     // 🔹 Infinite marquee scroll effect
     gsap.to(trackRef.current, {
